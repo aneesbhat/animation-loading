@@ -1,0 +1,107 @@
+<html>
+<html>
+<head>
+    <title>Loader Animation</title>
+    <style>
+
+        * {
+            padding:0px;
+            margin:0px;
+            box-sizing:border-box;
+            list-style:none;
+            text-decoration:none;
+            font-family:sans-serif;
+        }
+
+        body {
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background-color:#222;
+        }
+
+        .circle-main {
+            content:'Loading';
+            width:150px;
+            height:150px;
+            background-image:linear-gradient(to right,rgb(59, 163, 96),rgb(84, 84, 185),rgb(206, 152, 161));
+            border-radius:100px;
+            position: relative;
+            animation:loading 1s 0s infinite linear;
+            display:flex;
+        }
+
+        .circle-main::after {
+            content:'';
+            color:white;
+            width:140px;
+            height:140px;
+            background-color:#222;
+            position: absolute;
+            border-radius:100px;
+            left:5px;
+            top:5px;
+            
+
+        }
+
+        .header {
+            position: relative;
+            font-family:cursive;
+            left:-137px;
+            color:white;
+            font-weight:200;
+        }
+
+        .bar-loader {
+            width:400px;
+            background-color:red;
+            height:5px;
+            border-radius:10px;
+            position: relative;
+            transform:s3caleX();
+            animation:load 3s 0s infinite linear;
+        }
+
+        .bar-loader::after {
+            content:'';
+            width:100%;
+            height:100%;
+            background-color:springgreen;
+            border-radius:10px;
+            position:absolute;
+            top:0px;
+            left:0px;
+            
+        }
+
+        @keyframes load {
+            100% {
+                
+                transform:scaleX(1);
+                transform-origin:top;
+            }
+        }
+
+        @keyframes loading {
+            100% {
+                transform:rotateZ(360deg);
+            }
+        }
+
+    </style>
+<body>
+
+    <div class="circle-main">
+
+    </div>
+
+    <h1 class="header">Loading..</h1>
+
+    <div class="bar-loader">
+
+    </div>
+    
+</body>
+</html>
